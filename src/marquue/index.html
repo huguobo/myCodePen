@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>marquee</title>
+  <style>
+    .marquee{
+      height: 30px;
+      width: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+    .marquee div{
+      display: block;
+      width: 200%;
+      position: absolute;
+      overflow: hidden;
+      animation: marquee 5s linear infinite;
+    }
+    .marquee div span{
+      float: left;
+      width: 50%;
+    }
+    @keyframes marquee{
+      0% { left: 0}
+      100% {left: -100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee">
+    <div>
+      <span>欢迎光临 MYCODEPEN</span>
+      <span>欢迎光临 MYCODEPEN</span>
+    </div>
+  </div>
+</body>
+</html>
