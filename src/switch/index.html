@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Switch</title>
+  <style>
+    .ui-switch {
+  display: none; }
+  .ui-switch + span {
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    width: 80px;
+    background: #d5d5d5;
+    vertical-align: middle;
+    border-radius: 49px;
+    overflow: hidden;
+    transition: all 0.2s ease 0s;
+    -webkit-transition: all 0.2s ease 0s; }
+    .ui-switch + span:before {
+      content: '';
+      position: absolute;
+      right: 2px;
+      height: 46px;
+      width: 46px;
+      border: 2px solid #d5d5d5;
+      background: #fff;
+      border-radius: 50%;
+      transition: all 0.2s ease 0s;
+      -webkit-transition: all 0.2s ease 0s;
+      transform: translate(-28px, 0);
+      -webkit-transform: translate(-28px, 0); }
+  .ui-switch:checked + span {
+    background: #2095FF; }
+    .ui-switch:checked + span:before {
+      border-color:  #2095FF;
+      transform: translate(0, 0);
+      -webkit-transform: translate(0, 0); }
+  </style>
+</head>
+<body>
+  <div>
+    <input
+      type="checkbox"
+      class="ui-switch"
+      readOnly
+      checked
+    />
+    <span
+      class="click-area"
+    ></span>
+</div>
+<script>
+  var clickArea = document.querySelector('.click-area');
+  clickArea.addEventListener('click', function(e){
+    console.log(e.target);
+    console.log(e.target.matches('.click-area'))
+    var inputElem = document.querySelector('.ui-switch');
+    inputElem.checked = !inputElem.checked;
+  })
+</script>
+</body>
+</html>
